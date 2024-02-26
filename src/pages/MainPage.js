@@ -29,15 +29,20 @@ export default function MainPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filteredBreeds.map((breed) => (
-          <div key={breed.id} className="bg-white border p-4 rounded-lg shadow">
-            <img
-              src={breed.image ? breed.image.url : undefined}
-              alt={breed.name}
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <h3 className="text-lg font-bold">{breed.name}</h3>
-            <p>{breed.origin}</p>
-          </div>
+          <Link key={breed.id} href={`/breeds/${breed.id}`} passHref>
+            <div
+              key={breed.id}
+              className="bg-white border p-4 rounded-lg shadow"
+            >
+              <img
+                src={breed.image ? breed.image.url : undefined}
+                alt={breed.name}
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <h3 className="text-lg font-bold">{breed.name}</h3>
+              <p>{breed.origin}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

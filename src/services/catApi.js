@@ -17,3 +17,15 @@ export const fetchBreeds = async () => {
     return []
   }
 }
+
+export const fetchBreedDetails = async (breedId) => {
+  console.log(`Fetching details for breed ID: ${breedId}`)
+  try {
+    const response = await api.get(`/breeds/${breedId}`)
+    console.log("Breed details response:", response.data)
+    return response.data // Assuming the API returns the breed details directly
+  } catch (error) {
+    console.error(`Failed to fetch details for breed ${breedId}`, error)
+    return null // Return null to indicate failure
+  }
+}
