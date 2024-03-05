@@ -22,15 +22,20 @@ export default function BreedPage() {
     }
   }, [id]);
 
-  if (!id) return <p>No breed ID provided.</p>;
-  if (!breed) return <p>Loading...</p>;
-
   return (
     <div>
       <Header />
       <div className="cat-details">
-        <h1 className="text-2xl font-bold">{breed?.name}</h1>
-        <p>The current dynamic ID is: {id}</p>
+        {!id ? (
+          <p>No breed ID provided.</p>
+        ) : !breed ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            <h1 className="text-2xl font-bold">{breed?.name}</h1>
+            <p>The current dynamic ID is: {id}</p>
+          </>
+        )}
       </div>
     </div>
   );
