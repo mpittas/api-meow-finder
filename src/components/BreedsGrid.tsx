@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Breed } from "../types/Breed";
 
 interface BreedsGridProps {
@@ -16,14 +17,25 @@ const BreedsGrid: React.FC<BreedsGridProps> = ({ breeds }) => {
           {breeds &&
             breeds.map((breed) => (
               <Link key={breed.id} href={`/breeds/${breed.id}`} passHref>
-                <div className="bg-white border p-4 rounded-lg shadow cursor-pointer">
-                  <img
-                    src={breed.image ? breed.image.url : undefined}
-                    alt={breed.name}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                  <h3 className="text-lg font-bold">{breed.name}</h3>
-                  <p>{breed.origin}</p>
+                <div className="bg-white border rounded-lg shadow cursor-pointer overflow-hidden ">
+                  <div className="h-[12rem] relative">
+                    <Image
+                      src={
+                        breed.image
+                          ? breed.image.url
+                          : "/path-to-default-image.jpg"
+                      }
+                      alt={breed.name}
+                      loading="lazy"
+                      fill={true}
+                      className="object-cover rounded-[0.5rem 0.5rem 0 0]"
+                    />
+                  </div>
+
+                  <div className="p-4">
+                    <h4 className="text-lg font-bold">{breed.name}</h4>
+                    <p className="text-sm text-slate-400">{breed.origin}</p>
+                  </div>
                 </div>
               </Link>
             ))}
