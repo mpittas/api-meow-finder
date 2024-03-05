@@ -20,6 +20,7 @@ const BreedsGrid: React.FC<BreedsGridProps> = ({ breeds }) => {
                 <div className="bg-white border rounded-lg shadow cursor-pointer overflow-hidden ">
                   <div className="h-[12rem] relative">
                     <Image
+                      sizes="(max-width: 100%) 100$, (max-width: 1200px) 50vw, 33vw"
                       src={
                         breed.image
                           ? breed.image.url

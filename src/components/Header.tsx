@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-gray-100 py-4 ">
+    <div className="bg-gray-100 py-4 ">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <nav>
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           </nav>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 

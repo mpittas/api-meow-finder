@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchBreeds } from "../services/catApi";
+import { fetchBreeds } from "../api/catApi";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import BreedsGrid from "@/components/BreedsGrid";
