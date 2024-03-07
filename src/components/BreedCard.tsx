@@ -1,14 +1,14 @@
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import {Breed} from "../types/Breed"
-import {truncateChars} from "../utils/truncate"
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Breed } from "../types/Breed";
+import { truncateChars } from "../utils/truncate";
 
 interface BreedCardProps {
-  breed: Breed
+  breed: Breed;
 }
 
-const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
+const BreedCard: React.FC<BreedCardProps> = ({ breed }) => {
   return (
     <Link
       className="def-card"
@@ -31,13 +31,13 @@ const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
         <div className="p-4">
           <h4 className="text-lg font-bold">{breed.name}</h4>
           <div className="text-sm text-slate-600 mb-4">
-            {truncateChars(breed.description, 70)}
+            {truncateChars(breed.description, 65)}
           </div>
           <p className="text-sm text-slate-400">{breed.origin}</p>
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default BreedCard
+export default BreedCard;

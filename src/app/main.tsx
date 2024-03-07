@@ -6,7 +6,7 @@ import Banner from "@/components/Banner";
 import BreedsGrid from "@/components/BreedsGrid";
 import { Breed } from "../types/Breed";
 
-export default function MainPage() {
+export default function Main() {
   const [breeds, setBreeds] = useState<Breed[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredBreeds, setFilteredBreeds] = useState<Breed[]>([]);

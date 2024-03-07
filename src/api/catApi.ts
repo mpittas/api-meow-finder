@@ -18,14 +18,31 @@ export const fetchBreeds = async () => {
   }
 };
 
-export const fetchBreedDetails = async (breedId) => {
+export const fetchBreedDetails = async (breedId: string) => {
   console.log(`Fetching details for breed ID: ${breedId}`);
   try {
     const response = await api.get(`/breeds/${breedId}`);
     console.log("Breed details response:", response.data);
-    return response.data; // Assuming the API returns the breed details directly
+    return response.data;
   } catch (error) {
     console.error(`Failed to fetch details for breed ${breedId}`, error);
-    return null; // Return null to indicate failure
+    return null;
+  }
+};
+
+export const fetchImages = async (
+  breedId: string | null,
+  limit: number = 5
+): Promise<any[]> => {
+  try {
+    let url = `/images/search?limit=${limit}`;
+    if (breedId) {
+      url += `&breed_id=${breedId}`;
+    }
+    const response = await api.get(url);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch images", error);
+    return [];
   }
 };
