@@ -27,23 +27,27 @@ export default function BreedPage() {
   }, [id]);
 
   return (
-    <div>
-      <Header />
-      <div className="cat-details">
-        {isLoading ? (
-          <p>Loading...</p> // Placeholder content
-        ) : !id || !breed ? (
-          <p>No breed ID provided or breed not found.</p>
-        ) : (
-          <div className="py-12">
-            <div className="container">
-              <ImageCarousel breedId={id} />
-              <h1 className="text-2xl font-bold">{breed.name}</h1>
-              <p>The current dynamic ID is: {id}</p>
+    <span>
+      <div className="bg-slate-100">
+        <Header />
+        <div className="cat-details">
+          {isLoading ? (
+            <p>Loading...</p> // Placeholder content
+          ) : !id || !breed ? (
+            <p>No breed ID provided or breed not found.</p>
+          ) : (
+            <div className="py-12 overflow-hidden">
+              <div>
+                <ImageCarousel breedId={id} />
+              </div>
+              <div className="container">
+                <h1 className="text-2xl font-bold">{breed.name}</h1>
+                <p>The current dynamic ID is: {id}</p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </span>
   );
 }

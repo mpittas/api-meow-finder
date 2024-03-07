@@ -22,24 +22,29 @@ const ImageCarousel: React.FC<{ breedId: string | null }> = ({ breedId }) => {
   }, [breedId]);
 
   var settings = {
-    dots: true,
     infinite: true,
+    dots: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    centerMode: true,
   };
 
   return (
     <>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index}>
-            <Image
-              src={image.url}
-              width={450}
-              height={150}
-              alt={`Image ${index + 1}`}
-            />
+          <div className="w-full">
+            <div
+              key={index}
+              style={{
+                backgroundImage: `url(${image.url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "450px",
+                borderRadius: "0 140px 0 140px",
+              }}
+            ></div>
           </div>
         ))}
       </Slider>
