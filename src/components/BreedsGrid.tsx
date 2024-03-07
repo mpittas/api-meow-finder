@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import React from "react"
-import {Breed} from "../types/Breed"
-import BreedCard from "./BreedCard"
+import React from "react";
+import { Breed } from "../types/Breed";
+import BreedCard from "./BreedCard";
 
 interface BreedsGridProps {
-  breeds: Breed[]
+  breeds: Breed[];
 }
 
-const BreedsGrid: React.FC<BreedsGridProps> = ({breeds}) => {
+const BreedsGrid: React.FC<BreedsGridProps> = ({ breeds }) => {
   return (
     <div className="py-16 bg-slate-100">
       <div className="container">
@@ -24,7 +24,7 @@ const BreedsGrid: React.FC<BreedsGridProps> = ({breeds}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BreedsGrid
+export default BreedsGrid;

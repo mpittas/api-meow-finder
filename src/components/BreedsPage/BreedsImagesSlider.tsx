@@ -4,13 +4,15 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { fetchImages } from "../api/catApi";
+import { fetchImages } from "../../api/catApi";
 
 interface Image {
   url: string;
 }
 
-const ImageCarousel: React.FC<{ breedId: string | null }> = ({ breedId }) => {
+const BreedsImagesSlider: React.FC<{ breedId: string | null }> = ({
+  breedId,
+}) => {
   const [images, setImages] = useState<Image[]>([]);
 
   useEffect(() => {
@@ -52,4 +54,4 @@ const ImageCarousel: React.FC<{ breedId: string | null }> = ({ breedId }) => {
   );
 };
 
-export default ImageCarousel;
+export default BreedsImagesSlider;

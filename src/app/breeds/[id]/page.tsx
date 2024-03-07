@@ -2,8 +2,11 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { fetchBreedDetails } from "../../../api/catApi"; // Adjust the import path as necessary
+
 import Header from "@/components/Header";
-import ImageCarousel from "@/components/ImageCarousel";
+import BreedsImageSlider from "@/components/BreedsPage/BreedsImagesSlider";
+import BreedContent from "@/components/BreedsPage/BreedContent";
+import BreedsLayout from "@/components/BreedsPage/BreedsLayout";
 
 interface Breed {
   name: string;
@@ -30,6 +33,7 @@ export default function BreedPage() {
     <span>
       <div className="bg-slate-100">
         <Header />
+
         <div className="cat-details">
           {isLoading ? (
             <p>Loading...</p> // Placeholder content
@@ -37,13 +41,13 @@ export default function BreedPage() {
             <p>No breed ID provided or breed not found.</p>
           ) : (
             <div className="py-12 overflow-hidden">
-              <div>
-                <ImageCarousel breedId={id} />
+              <div className="pb-20">
+                <BreedsImageSlider breedId={id} />
               </div>
-              <div className="container">
-                <h1 className="text-2xl font-bold">{breed.name}</h1>
-                <p>The current dynamic ID is: {id}</p>
-              </div>
+              <BreedsLayout
+                breedName={breed ? breed.name : ""}
+                id={id || null}
+              />
             </div>
           )}
         </div>
