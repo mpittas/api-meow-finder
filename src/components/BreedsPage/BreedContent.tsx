@@ -1,4 +1,5 @@
 import React from "react";
+import { BreedContext } from "./BreedContext";
 import { Lora } from "next/font/google";
 
 const lora = Lora({ subsets: ["latin"] });

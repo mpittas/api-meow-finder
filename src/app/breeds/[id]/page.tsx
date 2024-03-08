@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { fetchBreedDetails } from "../../../api/catApi"; // Adjust the import path as necessary
-
 import Header from "@/components/Header";
 import BreedsImageSlider from "@/components/BreedsPage/BreedsImagesSlider";
 import BreedContent from "@/components/BreedsPage/BreedContent";
