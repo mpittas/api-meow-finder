@@ -1,18 +1,18 @@
-import React from "react";
-import BreedContent from "./BreedContent";
+import React from "react"
+import BreedContent from "./BreedContent"
+import {Breed} from "../../types/Breed" // Adjust the import path as necessary
 
 type BreedsLayoutProps = {
-  breedName: string | null;
-  id: string | null;
-};
+  breed: Breed | null
+}
 
-const BreedsLayout: React.FC<BreedsLayoutProps> = ({ breedName, id }) => {
+const BreedsLayout: React.FC<BreedsLayoutProps> = ({breed}) => {
   return (
     <div className="container">
-      {breedName ? (
+      {breed ? (
         <div className="grid grid-cols-3 gap-12">
           <div className="bg-slate-200 h-[600px] col-span-2">
-            <BreedContent breedName={breedName} id={id} />
+            <BreedContent breed={breed} />
           </div>
           <div className="bg-slate-200"></div>
         </div>
@@ -20,7 +20,7 @@ const BreedsLayout: React.FC<BreedsLayoutProps> = ({ breedName, id }) => {
         <p>No breed selected.</p>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default BreedsLayout;
+export default BreedsLayout

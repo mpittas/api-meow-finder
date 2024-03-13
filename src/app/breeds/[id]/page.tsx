@@ -1,33 +1,29 @@
-"use client";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { fetchBreedDetails } from "../../../api/catApi"; // Adjust the import path as necessary
+"use client"
+import {useEffect, useState} from "react"
+import {usePathname} from "next/navigation"
+import {fetchBreedDetails} from "../../../api/catApi" // Adjust the import path as necessary
 
-import Header from "@/components/Header";
-import BreedsImageSlider from "@/components/BreedsPage/BreedsImagesSlider";
-import BreedContent from "@/components/BreedsPage/BreedContent";
-import BreedsLayout from "@/components/BreedsPage/BreedsLayout";
-
-interface Breed {
-  name: string;
-}
+import Header from "@/components/Header"
+import BreedsImageSlider from "@/components/BreedsPage/BreedsImagesSlider"
+import BreedsLayout from "@/components/BreedsPage/BreedsLayout"
+import {Breed} from "@/types/Breed" // Adjust the import path as necessary
 
 export default function BreedPage() {
-  const pathname = usePathname();
-  const id = pathname ? pathname.split("/").pop() : null;
-  const [breed, setBreed] = useState<Breed | null>(null);
-  const [isLoading, setIsLoading] = useState(true); // New loading state
+  const pathname = usePathname()
+  const id = pathname ? pathname.split("/").pop() : null
+  const [breed, setBreed] = useState<Breed | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (id) {
       fetchBreedDetails(id).then((breedDetails: Breed) => {
-        setBreed(breedDetails);
-        setIsLoading(false); // Update loading state once data is fetched
-      });
+        setBreed(breedDetails)
+        setIsLoading(false)
+      })
     } else {
-      setIsLoading(false); // Ensure loading state is updated even if no ID
+      setIsLoading(false)
     }
-  }, [id]);
+  }, [id])
 
   return (
     <span>
@@ -36,7 +32,7 @@ export default function BreedPage() {
 
         <div className="cat-details">
           {isLoading ? (
-            <p>Loading...</p> // Placeholder content
+            <p>Loading...</p>
           ) : !id || !breed ? (
             <p>No breed ID provided or breed not found.</p>
           ) : (
@@ -44,14 +40,11 @@ export default function BreedPage() {
               <div className="pb-20">
                 <BreedsImageSlider breedId={id} />
               </div>
-              <BreedsLayout
-                breedName={breed ? breed.name : ""}
-                id={id || null}
-              />
+              <BreedsLayout breed={breed} />
             </div>
           )}
         </div>
       </div>
     </span>
-  );
+  )
 }
