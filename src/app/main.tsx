@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchBreeds } from "../api/catApi";
-import Header from "@/components/Header";
-import Banner from "@/components/Banner";
-import BreedsGrid from "@/components/BreedsGrid";
-import { Breed } from "../types/Breed";
+import { fetchBreeds } from "@/api/catApi";
+import Header from "@/components/sections/Header";
+import TopBanner from "@/components/sections/TopBanner";
+import Wrap from "@/components/sections/Wrap";
+import { Breed } from "@/types/Breed";
 
 export default function Main() {
   const [breeds, setBreeds] = useState<Breed[]>([]);
@@ -28,8 +28,8 @@ export default function Main() {
   return (
     <div>
       <Header />
-      <Banner searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <BreedsGrid breeds={filteredBreeds} />
+      <TopBanner searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Wrap breeds={filteredBreeds} />
     </div>
   );
 }

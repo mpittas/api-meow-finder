@@ -1,8 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Breed } from "../types/Breed";
-import { truncateChars } from "../utils/truncate";
+interface Image {
+  url: string;
+}
+
+interface Breed {
+  id: string;
+  name: string;
+  description: string;
+  origin: string;
+  image?: Image;
+}
+import { truncateChars } from "@/utils/truncate";
 
 interface BreedCardProps {
   breed: Breed;

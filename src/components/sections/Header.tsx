@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Search from "./Search";
 
 const Header: React.FC = () => {
   return (

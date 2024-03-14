@@ -1,13 +1,16 @@
-import React from "react"
-import Image from "next/image"
-import Search from "./Search"
+import React from "react";
+import Image from "next/image";
+import Search from "@/components/forms/Search";
 
-interface BannerProps {
-  searchQuery: string
-  setSearchQuery: React.Dispatch<React.SetStateAction<string>>
+interface TopBannerProps {
+  searchQuery: string;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Banner: React.FC<BannerProps> = ({searchQuery, setSearchQuery}) => {
+const TopBanner: React.FC<TopBannerProps> = ({
+  searchQuery,
+  setSearchQuery,
+}) => {
   return (
     <div>
       <div className="bg-gray-800 py20 min-h-[7rem] relative">
@@ -23,7 +26,7 @@ const Banner: React.FC<BannerProps> = ({searchQuery, setSearchQuery}) => {
         <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default TopBanner;

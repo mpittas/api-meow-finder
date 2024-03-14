@@ -1,14 +1,14 @@
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-interface BadgeLinkProps {
-  href: string
-  text: string
+interface ExternalLinkProps {
+  href: string;
+  text: string;
 }
 
-const BadgeLink: React.FC<BadgeLinkProps> = ({href, text}) => {
-  const validHref = href || "/default-path"
+const ExternalLink: React.FC<ExternalLinkProps> = ({ href, text }) => {
+  const validHref = href || "/default-path";
 
   return (
     <>
@@ -26,7 +26,7 @@ const BadgeLink: React.FC<BadgeLinkProps> = ({href, text}) => {
         {text}
       </Link>
     </>
-  )
-}
+  );
+};
 
-export default BadgeLink
+export default ExternalLink;

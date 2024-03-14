@@ -1,25 +1,25 @@
-"use client"
-import React, {useEffect, useState} from "react"
-import Image from "next/image"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import Slider from "react-slick"
-import {fetchImages} from "../../api/catApi"
+"use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { fetchImages } from "@/api/catApi";
 
 interface Image {
-  url: string
+  url: string;
 }
 
-const BreedsImagesSlider: React.FC<{breedId: string | null}> = ({breedId}) => {
-  const [images, setImages] = useState<Image[]>([])
+const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
+  const [images, setImages] = useState<Image[]>([]);
 
   useEffect(() => {
     if (breedId) {
       fetchImages(breedId, 5).then((fetchedImages: Image[]) => {
-        setImages(fetchedImages)
-      })
+        setImages(fetchedImages);
+      });
     }
-  }, [breedId])
+  }, [breedId]);
 
   var settings = {
     infinite: true,
@@ -28,7 +28,7 @@ const BreedsImagesSlider: React.FC<{breedId: string | null}> = ({breedId}) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-  }
+  };
 
   return (
     <>
@@ -49,7 +49,7 @@ const BreedsImagesSlider: React.FC<{breedId: string | null}> = ({breedId}) => {
         ))}
       </Slider>
     </>
-  )
-}
+  );
+};
 
-export default BreedsImagesSlider
+export default BreedsImages;

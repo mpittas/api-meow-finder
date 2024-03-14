@@ -1,20 +1,19 @@
-import React from "react"
-import Link from "next/link"
-import {Lora} from "next/font/google"
-import {Breed} from "../../types/Breed"
-import BadgeLink from "../BadgeLink"
-import IconBox from "../IconBox"
-import BadgeRounded from "../BadgeRounded"
-import CounterView from "../CounterView"
+import React from "react";
+import { Lora } from "next/font/google";
+import { Breed } from "@/types/Breed";
+import ExternalLink from "@/components/widgets/ExternalLink";
+import IconBox from "@/components/widgets/IconBox";
+import BadgeRounded from "@/components/widgets/BadgeRounded";
+import CounterView from "@/components/widgets/CounterView";
 
-const lora = Lora({subsets: ["latin"]})
+const lora = Lora({ subsets: ["latin"] });
 
-type BreedContentProps = {
-  breed: Breed
-}
+type BreedsContentProps = {
+  breed: Breed;
+};
 
-const BreedContent: React.FC<BreedContentProps> = ({breed}) => {
-  const temperamentArray = breed.temperament.split(", ")
+const BreedsContent: React.FC<BreedsContentProps> = ({ breed }) => {
+  const temperamentArray = breed.temperament.split(", ");
 
   return (
     <div className="breed-cnt">
@@ -28,9 +27,9 @@ const BreedContent: React.FC<BreedContentProps> = ({breed}) => {
         <div className="text-md text-gray-700 pb-6">{breed.description}</div>
 
         <div className="flex gap-x-2">
-          <BadgeLink href={breed.wikipedia_url} text="Wikipedia" />
-          <BadgeLink href={breed.vetstreet_url} text="Vetstreet" />
-          <BadgeLink href={breed.vcahospitals_url} text="VCA Hospitals" />
+          <ExternalLink href={breed.wikipedia_url} text="Wikipedia" />
+          <ExternalLink href={breed.vetstreet_url} text="Vetstreet" />
+          <ExternalLink href={breed.vcahospitals_url} text="VCA Hospitals" />
         </div>
       </div>
 
@@ -76,7 +75,7 @@ const BreedContent: React.FC<BreedContentProps> = ({breed}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BreedContent
+export default BreedsContent;
