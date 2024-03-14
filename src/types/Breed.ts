@@ -1,6 +1,5 @@
 export interface Breed {
   id: string
-  image?: {url: string}
   name: string
   description: string
   temperament: string

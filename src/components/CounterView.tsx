@@ -28,7 +28,7 @@ const CounterView: React.FC<CounterViewProps> = ({
           <div className="w-5 h-5 rounded-full bg-slate-900 flex items-center justify-center text-slate-200 leading-4 text-xs font-semibold">
             {count}
           </div>
-          <div className="font-medium text-slate-800">{title}</div>
+          <div className="font-medium text-sm text-slate-800">{title}</div>
         </div>
         <div className="flex gap-x-[0.2rem]">
           {[...Array(5)].map((_, index) => (

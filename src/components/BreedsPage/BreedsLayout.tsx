@@ -1,5 +1,6 @@
 import React from "react"
 import BreedContent from "./BreedContent"
+import BreedsFacts from "./BreedsFacts"
 import {Breed} from "../../types/Breed" // Adjust the import path as necessary
 
 type BreedsLayoutProps = {
@@ -14,7 +15,9 @@ const BreedsLayout: React.FC<BreedsLayoutProps> = ({breed}) => {
           <div className="col-span-2">
             <BreedContent breed={breed} />
           </div>
-          <div className="bg-slate-200"></div>
+          <div className="bg-slate-200">
+            <BreedsFacts />
+          </div>
         </div>
       ) : (
         <p>No breed selected.</p>
