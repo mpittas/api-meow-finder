@@ -10,8 +10,8 @@ const BreedsLayout: React.FC<BreedsLayoutProps> = ({breed}) => {
   return (
     <div className="container">
       {breed ? (
-        <div className="grid grid-cols-3 gap-12">
-          <div className="bg-slate-200 h-[600px] col-span-2">
+        <div className="grid grid-cols-3 gap-16">
+          <div className="col-span-2">
             <BreedContent breed={breed} />
           </div>
           <div className="bg-slate-200"></div>
