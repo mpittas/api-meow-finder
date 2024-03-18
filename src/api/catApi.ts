@@ -46,17 +46,3 @@ export const fetchImages = async (
     return []
   }
 }
-
-export const fetchBreedFacts = async (
-  breedId: string | null,
-  limit: number = 5
-): Promise<any[]> => {
-  try {
-    const response = await api.get(`/breeds/${breedId}/facts?limit=${limit}`)
-    console.log("Breed facts response:", response.data)
-    return response.data
-  } catch (error) {
-    console.error(`Failed to fetch facts for breed ${breedId}`, error)
-    return []
-  }
-}

@@ -7,12 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      screens: {
-        xl: "1080px",
-      },
-    },
+    // container: {
+    //   center: true,
+    //   screens: {
+    //     xl: "1080px",
+    //   },
+    // },
   },
   plugins: [],
 }

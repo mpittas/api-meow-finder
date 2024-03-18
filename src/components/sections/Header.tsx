@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 const Header: React.FC = () => {
   return (
@@ -11,9 +11,6 @@ const Header: React.FC = () => {
             <ul className="flex space-x-6 text-xs uppercase font-medium">
               <li>
                 <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/">About</Link>
               </li>
             </ul>
           </nav>
@@ -30,17 +27,24 @@ const Header: React.FC = () => {
           <nav>
             <ul className="flex space-x-6 text-xs uppercase font-medium">
               <li>
-                <Link href="/">Contacts</Link>
+                <Link
+                  href="https://github.com/mpittas/cats-info"
+                  target="_blank"
+                >
+                  Github
+                </Link>
               </li>
               <li>
-                <Link href="/">Github</Link>
+                <Link href="https://mariospittas.com/" target="_blank">
+                  Portfolio
+                </Link>
               </li>
             </ul>
           </nav>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

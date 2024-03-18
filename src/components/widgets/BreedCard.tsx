@@ -1,24 +1,15 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-interface Image {
-  url: string;
-}
-
-interface Breed {
-  id: string;
-  name: string;
-  description: string;
-  origin: string;
-  image?: Image;
-}
-import { truncateChars } from "@/utils/truncate";
+import React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import {Breed} from "@/types/Breed"
+import BadgeRounded from "./BadgeRounded"
+import {truncateChars} from "@/utils/truncate"
 
 interface BreedCardProps {
-  breed: Breed;
+  breed: Breed
 }
 
-const BreedCard: React.FC<BreedCardProps> = ({ breed }) => {
+const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
   return (
     <Link
       className="def-card"
@@ -43,11 +34,13 @@ const BreedCard: React.FC<BreedCardProps> = ({ breed }) => {
           <div className="text-sm text-slate-600 mb-4">
             {truncateChars(breed.description, 65)}
           </div>
-          <p className="text-sm text-slate-400">{breed.origin}</p>
+          <div className="flex">
+            <BadgeRounded text={breed.origin} />
+          </div>
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default BreedCard;
+export default BreedCard
