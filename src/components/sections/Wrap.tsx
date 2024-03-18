@@ -1,20 +1,22 @@
-import React from "react"
-import {Breed} from "@/types/Breed"
-import {Lora} from "next/font/google"
-import BreedCard from "@/components/widgets/BreedCard"
+import React from "react";
+import { Breed } from "@/types/Breed";
+import { Lora } from "next/font/google";
+import BreedCard from "@/components/widgets/BreedCard";
 
 interface WrapProps {
-  breeds: Breed[]
+  breeds: Breed[];
 }
 
-const lora = Lora({subsets: ["latin"]})
+const lora = Lora({ subsets: ["latin"] });
 
-const Wrap: React.FC<WrapProps> = ({breeds}) => {
+const Wrap: React.FC<WrapProps> = ({ breeds }) => {
   return (
-    <div className="py-16 bg-slate-100">
+    <div className="py-12 md:py-16 bg-slate-100">
       <div className="container mx-auto">
         <div className="pb-12 text-center">
-          <h2 className={`${lora.className} text-4xl font-medium mb-2`}>
+          <h2
+            className={`${lora.className} text-3xl md:text-4xl font-medium mb-2`}
+          >
             Discover the World of Cats
           </h2>
           <div className="text-slate-600 text-sm">
@@ -27,7 +29,7 @@ const Wrap: React.FC<WrapProps> = ({breeds}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Wrap
+export default Wrap;

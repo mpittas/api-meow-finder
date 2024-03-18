@@ -1,17 +1,17 @@
-import React from "react"
-import BreedsContent from "./BreedsContent"
-import BreedsFacts from "./BreedsFacts"
-import {Breed} from "@/types/Breed"
+import React from "react";
+import BreedsContent from "./BreedsContent";
+import BreedsFacts from "./BreedsFacts";
+import { Breed } from "@/types/Breed";
 
 type BreedsWrapProps = {
-  breed: Breed | null
-}
+  breed: Breed | null;
+};
 
-const BreedsWrap: React.FC<BreedsWrapProps> = ({breed}) => {
+const BreedsWrap: React.FC<BreedsWrapProps> = ({ breed }) => {
   return (
     <div className="container mx-auto">
       {breed ? (
-        <div className="px-[25rem]">
+        <div className="px-0 md:px-[12rem]">
           <div className="">
             <BreedsContent breed={breed} />
           </div>
@@ -20,7 +20,7 @@ const BreedsWrap: React.FC<BreedsWrapProps> = ({breed}) => {
         <p>No breed selected.</p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default BreedsWrap
+export default BreedsWrap;

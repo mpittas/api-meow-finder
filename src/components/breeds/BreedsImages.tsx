@@ -24,27 +24,52 @@ const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
   var settings = {
     infinite: true,
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 0,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
   };
 
   return (
     <>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="w-full">
-            <div
-              key={index}
-              style={{
-                backgroundImage: `url(${image.url})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                height: "450px",
-                borderRadius: "0 140px 0 140px",
-              }}
-            ></div>
+          <div
+            key={index}
+            className="w-full aspect-[4/4] md:aspect-[4/3] relative"
+          >
+            <Image
+              src={image.url}
+              alt="Cats logo"
+              fill={true}
+              style={{ objectFit: "cover" }}
+              priority={true}
+              quality={90}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            ></Image>
           </div>
         ))}
       </Slider>

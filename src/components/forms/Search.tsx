@@ -13,7 +13,7 @@ const Search: React.FC<SearchProps> = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <div className="mt-[-2rem] z-1 relative">
-      <div className="w-[520px] mx-auto flex items-center justify-center">
+      <div className="w-full md:w-[520px] mx-auto flex items-center justify-center">
         <input
           type="text"
           value={searchQuery}

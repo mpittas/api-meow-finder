@@ -23,10 +23,14 @@ const BreedsContent: React.FC<BreedsContentProps> = ({ breed }) => {
             <BadgeRounded key={index} text={temperament} />
           ))}
         </div>
-        <h1 className={`${lora.className} text-6xl pb-5`}>{breed.name}</h1>
-        <div className="text-md text-gray-700 pb-6">{breed.description}</div>
+        <h1 className={`${lora.className} text-4xl md:text-6xl pb-5`}>
+          {breed.name}
+        </h1>
+        <div className="text-sm md:text-md text-gray-700 pb-6">
+          {breed.description}
+        </div>
 
-        <div className="flex gap-x-2">
+        <div className="flex gap-x-2 flex-wrap">
           <ExternalLink href={breed.wikipedia_url} text="Wikipedia" />
           <ExternalLink href={breed.vetstreet_url} text="Vetstreet" />
           <ExternalLink href={breed.vcahospitals_url} text="VCA Hospitals" />
@@ -39,15 +43,23 @@ const BreedsContent: React.FC<BreedsContentProps> = ({ breed }) => {
         <h2 className="text-xs font-semibold pb-5 text-slate-400 uppercase">
           Characteristics
         </h2>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <IconBox title="Origin" subtitle={breed.origin} />
           </div>
           <div>
-            <IconBox title="Lifespan" subtitle={`${breed.life_span} years`} />
+            <IconBox
+              title="Lifespan"
+              subtitle={`${breed.life_span} years`}
+              image={"/heart-icon.svg"}
+            />
           </div>
           <div>
-            <IconBox title="Weight" subtitle={`${breed.weight.metric} kg`} />
+            <IconBox
+              title="Weight"
+              subtitle={`${breed.weight.metric} kg`}
+              image={"/phone-icon.svg"}
+            />
           </div>
         </div>
       </div>
@@ -56,7 +68,7 @@ const BreedsContent: React.FC<BreedsContentProps> = ({ breed }) => {
         <h2 className="text-xs font-semibold pb-5 text-slate-400 uppercase">
           Key Characteristics
         </h2>
-        <div className="grid grid-cols-3 gap-x-14 gap-y-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10">
           <CounterView count={breed.adaptability} title="Adaptability" />
           <CounterView count={breed.intelligence} title="Intelligence" />
           <CounterView count={breed.affection_level} title="Affection level" />

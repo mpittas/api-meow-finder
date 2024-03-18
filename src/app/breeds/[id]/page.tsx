@@ -37,7 +37,7 @@ export default function BreedPage() {
             <p>No breed ID provided or breed not found.</p>
           ) : (
             <div className="overflow-hidden">
-              <div className="pb-20">
+              <div className="pb-12 md:pb-20">
                 <BreedsImage breedId={id} />
               </div>
               <BreedsWrap breed={breed} />

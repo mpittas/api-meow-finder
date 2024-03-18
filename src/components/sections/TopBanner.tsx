@@ -22,7 +22,7 @@ const TopBanner: React.FC<TopBannerProps> = ({
         />
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-slate-900 opacity-40"></div>
       </div>
-      <div className="bg-slate-100">
+      <div className="container bg-slate-100">
         <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
     </div>

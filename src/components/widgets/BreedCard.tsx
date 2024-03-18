@@ -1,15 +1,15 @@
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import {Breed} from "@/types/Breed"
-import BadgeRounded from "./BadgeRounded"
-import {truncateChars} from "@/utils/truncate"
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Breed } from "@/types/Breed";
+import BadgeRounded from "./BadgeRounded";
+import { truncateChars } from "@/utils/truncate";
 
 interface BreedCardProps {
-  breed: Breed
+  breed: Breed;
 }
 
-const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
+const BreedCard: React.FC<BreedCardProps> = ({ breed }) => {
   return (
     <Link
       className="def-card"
@@ -17,7 +17,7 @@ const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
       href={`/breeds/${breed.id}`}
       passHref
     >
-      <div className="bg-white border rounded-lg shadow cursor-pointer overflow-hidden ">
+      <div className="bg-white border rounded-[4px] shadow cursor-pointer overflow-hidden h-full ">
         <div className="h-[12rem] relative">
           <Image
             sizes="(max-width: 100%) 100$, (max-width: 1200px) 50vw, 33vw"
@@ -30,7 +30,9 @@ const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
         </div>
 
         <div className="p-4">
-          <h4 className="text-lg font-bold">{breed.name}</h4>
+          <h4 className="text-lg font-bold text-slate-900 pb-1">
+            {breed.name}
+          </h4>
           <div className="text-sm text-slate-600 mb-4">
             {truncateChars(breed.description, 65)}
           </div>
@@ -40,7 +42,7 @@ const BreedCard: React.FC<BreedCardProps> = ({breed}) => {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default BreedCard
+export default BreedCard;
