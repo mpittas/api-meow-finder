@@ -1,27 +1,27 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { fetchImages } from "@/api/catApi";
+"use client"
+import React, {useEffect, useState} from "react"
+import Image from "next/image"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick"
+import {fetchImages} from "@/api/catApi"
 
-interface Image {
-  url: string;
+interface CatImage {
+  url: string
 }
 
-const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
-  const [images, setImages] = useState<Image[]>([]);
+const BreedsImages: React.FC<{breedId: string | null}> = ({breedId}) => {
+  const [images, setImages] = useState<CatImage[]>([])
 
   useEffect(() => {
     if (breedId) {
-      fetchImages(breedId, 5).then((fetchedImages: Image[]) => {
-        setImages(fetchedImages);
-      });
+      fetchImages(breedId, 5).then((fetchedImages) => {
+        setImages(fetchedImages)
+      })
     }
-  }, [breedId]);
+  }, [breedId])
 
-  var settings = {
+  const settings = {
     infinite: true,
     dots: true,
     autoplay: true,
@@ -51,7 +51,7 @@ const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
         },
       },
     ],
-  };
+  }
 
   return (
     <>
@@ -65,7 +65,7 @@ const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
               src={image.url}
               alt="Cats logo"
               fill={true}
-              style={{ objectFit: "cover" }}
+              style={{objectFit: "cover"}}
               priority={true}
               quality={90}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -74,7 +74,7 @@ const BreedsImages: React.FC<{ breedId: string | null }> = ({ breedId }) => {
         ))}
       </Slider>
     </>
-  );
-};
+  )
+}
 
-export default BreedsImages;
+export default BreedsImages
