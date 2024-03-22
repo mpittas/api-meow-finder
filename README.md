@@ -1,5 +1,5 @@
 
-![Logo](https://i.imgur.com/4ItVm1A.png)
+![Logo](https://i.imgur.com/ypIjyhD.png)
 
 
 [![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=readme-gen-alpha)](https://meow-finder.vercel.app/)
