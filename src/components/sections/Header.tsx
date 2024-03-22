@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 const Header: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           <div className="order-[-1] md:order-[0] ">
             <Link href="/">
               <Image
-                src="/temporary-logo.svg"
+                src="/logo.svg"
                 width={150}
                 height={50}
                 alt="Cats logo"
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
